@@ -1,6 +1,15 @@
 # IndigoMotd
 BungeeCord MOTD plugin with random icons and text support
 
+# Screenshots
+![Screenshot_1](https://user-images.githubusercontent.com/78136575/210823261-834f5e8e-9209-4ebd-b88e-ffd7c301579e.png)
+![Hoverbox](https://user-images.githubusercontent.com/78136575/210823403-f80df8b3-190e-4258-bd6f-5562353f92ae.png)
+![Screenshot_2](https://user-images.githubusercontent.com/78136575/210823651-6b37f634-1be9-415a-ad03-03ebd92e678c.png)
+
+# Addition information
+This plugin is no longer in development, sorry
+This plugin use bStats, you can check plugin page [here](https://bstats.org/plugin/bungeecord/IndigoMOTD-Bungee/16082)
+
 # config.yml
 ```yml
 enable-players: true
