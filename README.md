@@ -1,14 +1,23 @@
 # IndigoMotd
 BungeeCord MOTD plugin with random icons and text support
 
+# Features
+* Random MOTD (See config for random options)
+* Random server icon
+* Changeable hover box
+* Changeable protocol version
+* Changeable protocol name
+* Set fake online/max-online number
+* Use placeholders in almost all texts
+* Use math expressions in `online` and `max` placeholders 
+
 # Screenshots
 ![Screenshot_1](https://user-images.githubusercontent.com/78136575/210823261-834f5e8e-9209-4ebd-b88e-ffd7c301579e.png)
 ![Hoverbox](https://user-images.githubusercontent.com/78136575/210823403-f80df8b3-190e-4258-bd6f-5562353f92ae.png)
 ![Screenshot_2](https://user-images.githubusercontent.com/78136575/210823651-6b37f634-1be9-415a-ad03-03ebd92e678c.png)
 
 # Addition information
-This plugin is no longer in development, sorry
-
+This plugin is no longer in development, sorry\
 This plugin use bStats, you can check plugin page [here](https://bstats.org/plugin/bungeecord/IndigoMOTD-Bungee/16082)
 
 # config.yml
@@ -50,3 +59,25 @@ players:
   playersServer: "GLOBAL" #from what server display players to hoverbox? `GLOBAL` is all servers
   displayNames: false #append entries in hoverbox after `players.top`?
   ```
+
+# Placeholders (`*` if player (pinger) is set; `**` math expressions supported)
+## `player.entry`:
+  * %name% player name
+## `protocol-name`:
+  * %max% `players.max`
+  * %online% `player.online`
+  * %online_<server>% replace <server> with server name specified in proxy config. Displays specified server real online
+  * %playerIP% pinger socket address*
+  * %playerUUID% pinger UUID (if available)*
+  * %playerProtocol% pinger protocol*
+## `players.max`**:
+  * %limit% Real proxy players limit
+  * %visibleMax% `max_players` in listeners section in proxy config
+  * %realOnline% real proxy online
+  * %fake% players.fake-max-online
+## `players.online`**:
+  * %max% `players.max`
+  * %limit% Real proxy players limit
+  * %visibleMax% `max_players` in `listeners` section in proxy config
+  * %realOnline% real proxy online
+  * %fake% `players.fake-online`
