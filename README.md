@@ -8,6 +8,7 @@ BungeeCord MOTD plugin with random icons and text support
 
 # Addition information
 This plugin is no longer in development, sorry
+
 This plugin use bStats, you can check plugin page [here](https://bstats.org/plugin/bungeecord/IndigoMOTD-Bungee/16082)
 
 # config.yml
