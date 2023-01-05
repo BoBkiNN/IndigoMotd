@@ -1,0 +1,4 @@
+name: IndigoMOTD
+version: '${project.version}'
+main: xyz.bobkinn_.indigomotd.bukkit.BukkitPlugin
+author: BoBkiNN_

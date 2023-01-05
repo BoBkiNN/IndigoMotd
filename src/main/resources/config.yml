@@ -1,0 +1,36 @@
+enable-players: true
+motd:
+  lineOne:
+    - "&9&lExample line 1"
+    - "&e&lExample line 2"
+  lineTwo:
+    - "&c&lExample next line 1"
+    - "&b&lExample next line 2"
+  split-random: false
+protocol-ver: 758
+protocol-name: "&9&lJOIN &e-->>                                             &7%online%&8/&7%max%"
+random-images:
+  - "icon1.png"
+  - "icon2.png"
+  - "icon3.png"
+scan-all-icons: false
+change:
+  online: true
+  max-online: true
+  players: true
+  icon: true
+  protocol: true
+  motd: true
+  protocol-name: true
+  protocol-ver: true
+players:
+  fake-max-online: 100
+  fake-online: 99
+  online: "%max%-1"
+  max: "%fake%"
+  top:
+    - "&bCurrent Online: %online%/%max%"
+    - ""
+  entry: "&9%name%"
+  playersServer: "GLOBAL"
+  displayNames: false
