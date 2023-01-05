@@ -22,7 +22,7 @@ motd:
     - "&c&lExample next line 1"
     - "&b&lExample next line 2"
   split-random: false #Use fifferent random for lines?
-protocol-ver: 758 #1.18.2, see minecraft wiki for other
+protocol-ver: 758 #1.18.2, see minecraft wiki for others
 protocol-name: "&9&lJOIN &e-->>                                             &7%online%&8/&7%max%"
 random-images:
   - "icon1.png"
