@@ -6,7 +6,7 @@
 
     <groupId>xyz.bobkinn_</groupId>
     <artifactId>IndigoMOTD</artifactId>
-    <version>0.2-b32</version>
+    <version>0.2-b34</version>
     <packaging>jar</packaging>
 
     <name>IndigoMOTD</name>
@@ -118,7 +118,7 @@
         <dependency>
             <groupId>org.mariuszgromada.math</groupId>
             <artifactId>MathParser.org-mXparser</artifactId>
-            <version>5.0.6</version>
+            <version>5.1.0</version>
         </dependency>
     </dependencies>
 </project>

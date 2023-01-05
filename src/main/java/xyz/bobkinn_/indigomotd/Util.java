@@ -3,14 +3,12 @@ package xyz.bobkinn_.indigomotd;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.Favicon;
 
-import javax.annotation.Nonnull;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class Util {
@@ -83,7 +81,7 @@ public class Util {
             try {
                 BufferedImage img = ImageIO.read(f);
                 icons.add(Favicon.create(img));
-                IndigoMOTD.logger.info("Loaded icon "+f.getName());
+//                IndigoMOTD.logger.info("Loaded icon "+f.getName());
             } catch (IOException e) {
                 IndigoMOTD.logger.warning("Failed to load icon \""+f.getName()+"\"");
                 e.printStackTrace();
@@ -95,7 +93,7 @@ public class Util {
             IndigoMOTD.logger.warning("Random icons list is empty, default server icon will be used");
             icons.add(IndigoMOTD.plugin.getProxy().getConfig().getFaviconObject());
         }
-        IndigoMOTD.logger.info("Icons loaded");
+//        IndigoMOTD.logger.info("Icons loaded");
         return icons;
     }
 }

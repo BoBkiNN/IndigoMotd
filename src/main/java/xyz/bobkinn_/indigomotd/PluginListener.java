@@ -110,7 +110,7 @@ public class PluginListener implements Listener {
                 .replace("%visibleMax%",String.valueOf(h.visibleMax));
         Expression e = new Expression(expression);
         double result = e.calculate();
-        IndigoMOTD.logger.info(ChatColor.GREEN+"Online calc "+e.getExpressionString()+" "+result);
+//        IndigoMOTD.logger.info(ChatColor.GREEN+"Online calc "+e.getExpressionString()+" "+result);
         if (Double.isNaN(result)) return IndigoMOTD.plugin.getProxy().getOnlineCount();
         return new Double(result).intValue();
     }
@@ -124,7 +124,7 @@ public class PluginListener implements Listener {
                 .replace("%fake%",String.valueOf(fakeMax));
         Expression e = new Expression(expression);
         double result = e.calculate();
-        IndigoMOTD.logger.info(ChatColor.GREEN+"Max calc "+e.getExpressionString()+" = "+result);
+//        IndigoMOTD.logger.info(ChatColor.GREEN+"Max calc "+e.getExpressionString()+" = "+result);
         if (Double.isNaN(result)) return IndigoMOTD.plugin.getProxy().getConfig().getPlayerLimit();
         return new Double(result).intValue();
     }
@@ -177,7 +177,7 @@ public class PluginListener implements Listener {
                     }
                 }
             }
-            IndigoMOTD.logger.info(players.toString());
+//            IndigoMOTD.logger.info(players.toString());
 
             ServerPing.PlayerInfo[] pArr = new ServerPing.PlayerInfo[players.size()];
             for (int i = 0; i<pArr.length;i++){

@@ -18,17 +18,17 @@ public class BaseUtils {
     }
 
     public static String parsePlaceholders(String original,@Nonnull Map<String,String> placeholderMap){
-        IndigoMOTD.logger.info("=== Parsing \""+original+"\"...");
+//        IndigoMOTD.logger.info("=== Parsing \""+original+"\"...");
         String ret = original;
         for (Map.Entry<String,String> entry : placeholderMap.entrySet()){
             if (entry.getValue() == null){
-                IndigoMOTD.logger.warning("Failed to replace "+entry.getKey()+" because value is null");
+//                IndigoMOTD.logger.warning("Failed to replace "+entry.getKey()+" because value is null");
                 continue;
             }
-            IndigoMOTD.logger.info(entry.getKey()+", "+entry.getValue());
-            ret =ret.replace(entry.getKey() , entry.getValue());
+//            IndigoMOTD.logger.info(entry.getKey()+", "+entry.getValue());
+            ret = ret.replace(entry.getKey(), entry.getValue());
         }
-        IndigoMOTD.logger.info("--- Parsed: \""+ret+"\"");
+//        IndigoMOTD.logger.info("--- Parsed: \""+ret+"\"");
         return ret;
     }
 }
