@@ -2,6 +2,7 @@
 BungeeCord MOTD plugin with random icons and text support
 
 # Features
+* MiniMessage support
 * Random MOTD (See config for random options)
 * Random server icon
 * Changeable hover box
@@ -23,6 +24,7 @@ This plugin use bStats, you can check plugin page [here](https://bstats.org/plug
 # config.yml
 ```yml
 enable-players: true
+use-mini-message: true # enable minimessage for motd?
 motd:
   lineOne:
     - "&9&lExample line 1"
