@@ -1,4 +1,5 @@
 enable-players: true
+use-mini-message: true
 motd:
   lineOne:
     - "&9&lExample line 1"

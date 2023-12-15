@@ -6,7 +6,7 @@
 
     <groupId>xyz.bobkinn_</groupId>
     <artifactId>IndigoMOTD</artifactId>
-    <version>0.2-b34</version>
+    <version>0.2.43</version>
     <packaging>jar</packaging>
 
     <name>IndigoMOTD</name>
@@ -17,7 +17,7 @@
     </properties>
 
     <build>
-        <defaultGoal>clean package</defaultGoal>
+        <defaultGoal>package</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -119,6 +119,22 @@
             <groupId>org.mariuszgromada.math</groupId>
             <artifactId>MathParser.org-mXparser</artifactId>
             <version>5.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-serializer-legacy</artifactId>
+            <version>4.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-minimessage</artifactId>
+            <version>4.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

@@ -1,6 +1,7 @@
 package xyz.bobkinn_.indigomotd;
 
 import net.md_5.bungee.api.plugin.Plugin;
+import net.md_5.bungee.chat.BaseComponentSerializer;
 import net.md_5.bungee.config.Configuration;
 import org.bstats.bungeecord.Metrics;
 
@@ -53,8 +54,9 @@ public final class IndigoMOTD extends Plugin {
                 cfg.set("motd.lineOne", Collections.singletonList("Line 2"));
             }
         }
-        if (!BaseUtils.linesCountSame()){
-            logger.severe("Lines count are not same, lineTwo will be similar as lineOne");
+        boolean splitRandom = ConfigAdapter.cfg.getBoolean("motd.split-random",false);
+        if (!BaseUtils.linesCountSame() && !splitRandom){
+            logger.severe("Lines count are not same and splitRandom is disabled, lineTwo will be similar as lineOne");
             cfg.set("motd.lineTwo",cfg.getStringList("motd.lineOne"));
         }
         if (listener != null) listener.reload();

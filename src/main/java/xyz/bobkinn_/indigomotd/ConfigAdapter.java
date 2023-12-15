@@ -6,6 +6,7 @@ import net.md_5.bungee.config.YamlConfiguration;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.logging.Logger;
 
 public class ConfigAdapter {
@@ -27,7 +28,7 @@ public class ConfigAdapter {
                     logger.severe("Failed to create config file");
                     return;
                 }
-                OutputStream to = new FileOutputStream(configFile);
+                OutputStream to = Files.newOutputStream(configFile.toPath());
                 IOUtils.copy(configStream,to);
             }
             cfg = ConfigurationProvider.getProvider(YamlConfiguration.class).load(configFile);

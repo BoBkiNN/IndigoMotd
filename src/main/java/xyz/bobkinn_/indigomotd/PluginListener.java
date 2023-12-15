@@ -3,7 +3,6 @@ package xyz.bobkinn_.indigomotd;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.Favicon;
 import net.md_5.bungee.api.ServerPing;
-import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.config.ListenerInfo;
 import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.api.connection.PendingConnection;
@@ -31,8 +30,10 @@ public class PluginListener implements Listener {
     public String playerEntry;
     public String playersServer;
     public boolean displayNames;
+    private boolean useMiniMessage;
 
     public void reload(){
+        useMiniMessage = ConfigAdapter.cfg.getBoolean("use-mini-message");
         changeOnline = ConfigAdapter.cfg.getBoolean("change.online",true);
         changeMax = ConfigAdapter.cfg.getBoolean("change.max",true);
         changePlayers = ConfigAdapter.cfg.getBoolean("change.players",true);
@@ -45,7 +46,6 @@ public class PluginListener implements Listener {
         protoName = ConfigAdapter.cfg.getString("protocol-name","Custom Protocol Name");
         protoName = Util.color(protoName);
         playersTop = new ArrayList<>(ConfigAdapter.cfg.getStringList("players.top"));
-        if (playersTop.isEmpty()) playersTop = new ArrayList<>(Collections.singletonList("&bCurrent Online: %online_global%/%max%"));
         playerEntry = ConfigAdapter.cfg.getString("players.entry","&9%name%");
         playersServer = ConfigAdapter.cfg.getString("players.playersServer","GLOBAL");
         displayNames = ConfigAdapter.cfg.getBoolean("players.displayNames",false);
@@ -87,7 +87,7 @@ public class PluginListener implements Listener {
             line1 = l1.get(i1);
             line2 = l2.get(i2);
         }
-        return Util.color(line1) + ChatColor.RESET + '\n' + Util.color(line2);
+        return Util.color(line1) + (useMiniMessage ? "<reset>" : ChatColor.RESET) + '\n' + Util.color(line2);
     }
 
     public static int getVisibleMax(){
@@ -149,7 +149,14 @@ public class PluginListener implements Listener {
         if (changeOnline) pl.setOnline(retH.online);
         if (changeMax) pl.setMax(retH.max);
         if (changeIcon) ping.setFavicon(Util.getRandomIcon(icons));
-        if (changeMOTD) ping.setDescriptionComponent(new TextComponent(getDesc()));
+
+        if (changeMOTD) {
+            if (useMiniMessage){
+                ping.setDescriptionComponent(Util.parseMiniMessage(getDesc()));
+            } else {
+                ping.setDescriptionComponent(Util.legacyToBungee(getDesc()));
+            }
+        }
         if (changeProtocol){
             ServerPing.Protocol p = ping.getVersion();
             if (changeProtoVer) p.setProtocol(protoVer);
